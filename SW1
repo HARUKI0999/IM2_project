@@ -1,0 +1,11 @@
+def convert_currency(dollar):
+    peso = dollar * 57.17
+    yen = dollar * 146.67
+    return peso, yen
+
+usd = float(input("Enter currency in ($): "))
+php, jpy = convert_currency(usd)
+
+print("\nDollar($)\tPhil Peso(P)\tJpn Yen(¥)")
+print(f"{usd:.2f}\t\t{php:.2f}\t\t{jpy:.2f}")
+    
