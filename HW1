@@ -1,1 +1,27 @@
 
+def create_matrix(rows, cols):
+    return [{col: float(input(f"Row{row+1} Col{col+1}: ")) for col in range(cols)} for row in range(rows)]
+
+def print_matrix(matrix, rows, cols):
+    print("\nThe numbers are:\n")
+    for row in range(rows):
+        for col in range(cols):
+            print(matrix[row][col], end=" ")
+        print()
+
+def search_matrix(matrix, rows, cols, target):
+    return [(row+1, col+1) for row in range(rows) for col in range(cols) if matrix[row][col]==target]
+
+# --- Main ---
+rows, cols = int(input("Enter rows: ")), int(input("Enter cols: "))
+matrix = create_matrix(rows, cols)
+print_matrix(matrix, rows, cols)
+
+target = float(input("\nSearch: "))
+positions = search_matrix(matrix, rows, cols, target)
+
+if positions:
+    for row, col in positions:
+        print(f"Number {target} found at Row {row}, Col {col}")
+else:
+    print(f"Number {target} not found.")
