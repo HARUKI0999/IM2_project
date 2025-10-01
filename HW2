@@ -1,0 +1,18 @@
+def getFrequency(word):
+    freq = {} 
+    for ch in word:
+        if ch.isalpha():  
+            if ch in freq:
+                freq[ch] += 1
+            else:
+                freq[ch] = 1
+    return freq
+
+string = input("Enter string: ")
+words = string.replace(",", " ").split()
+for x in words:
+    result = getFrequency(x)
+    output = []
+    for i, t in result.items():
+        output.append(f"{i}={t}")
+    print(", ".join(output))
