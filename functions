@@ -1,0 +1,58 @@
+import math
+def greetings(str):
+    print(f"hello World, {str}")
+
+greetings("mike")
+
+#arbitrary function
+def getStudent(*student):
+    print(f"idnum={student[0]} name={student[1]} course={student[2]}")
+
+getStudent("URD-001","mike","IT")
+
+def getStudent(id,name,course):
+    print(f"idnum={id} name={name} course={course}")
+
+getStudent(id="URD-002",name="mikey",course="ITit")
+
+#key word arguements
+def getStudent(**student):
+    print(f"Id num {student["id"]} Name {student["name"]} program {student["course"]}")
+
+getStudent(id="URD-003",name="mikeko",course="BSMATH")
+
+def calculate(x, y):
+    sum=x+y     
+    avg=sum/2
+    return (sum, avg)
+sum1, avg2=calculate(10.5, 7.7)
+print(f"Sum: {sum1}, Average: {avg2}")
+
+#built in function in python
+#String function
+#count()    strip()     replace()     split()       join()
+str="Philippines"
+print(str.count("i"))
+print(str.lower().count("p"))
+str2="     lomboy      "
+print(str2.strip())
+str3="lomboy"
+print(str3.replace("l","L"))
+str4=["lomboy","justin","carlo"]
+print('='.join(str4))
+str5="justin , Carlo , Lomboy"
+print(str5.split(','))
+
+#iterator functions
+#sum()  min()   max()
+list=[12,34,56,232,44,343,657,34,3]
+print(f"Sum: {sum(list)}")
+print(f"Min: {min(list)}")
+print(f"Max: {max(list)}")
+
+#math functions
+#math.ciel() math.floor() math.sqrt() math.pow()
+print(math.ceil(34.56))
+print(math.floor(34.56))
+print(math.sqrt(36))
+print(math.pow(3,4))
